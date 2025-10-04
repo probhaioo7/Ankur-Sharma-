@@ -20,6 +20,7 @@ Hi, I'm Ankur Sharma
    
    Building hands-on projects and      exploring open-source EDA           toolsPreparing for a 9+ CGPA in     my B.Tech and aiming for            research internships in VLSI
 -----------------------------------
+
 🛠️ Skills
 
    Electronics Circuit Analysis |      Diode Characteristics |             Rectifier & Regulator Design
@@ -28,24 +29,28 @@ Hi, I'm Ankur Sharma
 
    Tools: Python, C++, Verilog         (beginner), Git, Markdown
 -----------------------------------
+
 🚀 Projects
 
    [Your Project 1]: Brief             description and tech/tools used.
    
    (Your Project 2]: Brief             description and tech/tools          usedCheck my repositories for       more projects and learning          diaries!
 -----------------------------------
+
 📚 Academic Interests
 
    VLSI-design flows, RTL to           GDSII, and verification             methodologies
    
    Modern electronics: From            fundamentals to nano-CMOS and       beyondPersonal development in       learning strategies,                discipline, and exam performance
 -----------------------------------
+
 🧘 Personal Interests
 
    Spiritual philosophy, Bhagavad      Gita exploration, and Sanatana      Dharma studies
    
    Running (building up to 5km),       folk music, Bhojpuri songs, and     language learning
 -----------------------------------
+
 📫 How to Reach 
 MeEmail[your.email@example.com]
 LinkedIn: [your-linkedin] 
