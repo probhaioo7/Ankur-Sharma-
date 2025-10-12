@@ -1,14 +1,424 @@
-<!DOCTYPE html>
+<!--
+Multi-page website for Ankur Sharma
+Files included below. Copy each FILE block into separate files preserving folder structure.
+
+Files:
+- index.html
+- about.html
+- projects.html
+- contact.html
+- css/style.css
+- js/main.js
+- assets/resume.pdf (placeholder — upload your real resume and keep the same filename)
+
+Instructions:
+1. Create a GitHub repository named: your-username.github.io
+2. Upload these files preserving folders (css/, js/, assets/).
+3. GitHub Pages will serve index.html as the homepage.
+
+-->
+
+<!-- FILE: index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ankur Sharma — Electronics | VLSI Enthusiast</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Ankur Sharma — B.Tech (Electronics), VLSI Enthusiast">
 </head>
 <body>
-  <h1>Hello, I'm Hyper Deadshot 👋</h1>
-  <p>Welcome to my personal website!</p>
-  <p>I'm a BCA student and future UPSC aspirant.</p>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">Ankur Sharma</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="resume-btn" href="assets/resume.pdf" download>Download Resume</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-left">
+        <h1>Hi, I'm <span class="neon">Ankur Sharma</span></h1>
+        <p class="tagline">Electronics Engineer | VLSI Enthusiast | Lifelong Learner</p>
+        <p>I am pursuing B.Tech in Electronics Engineering at REC Mirzapur. I build digital and analog circuits and I'm passionate about VLSI and semiconductor design. I love exploring myself and learning new things.</p>
+        <div class="cta-row">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn ghost" href="contact.html">Contact Me</a>
+        </div>
+        <div class="social-row">
+          <a href="https://x.com/probhai_oo7" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="avatar">
+          <!-- placeholder avatar circle -->
+          <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff" />
+                <stop offset="100%" stop-color="#6a00ff" />
+              </linearGradient>
+            </defs>
+            <circle cx="110" cy="110" r="108" fill="none" stroke="url(#g1)" stroke-width="4" />
+            <rect x="50" y="50" width="120" height="120" rx="12" fill="#0b0f14" stroke="url(#g1)" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="feature">
+        <h3>Education</h3>
+        <p>B.Tech — Electronics Engineering, REC Mirzapur</p>
+      </div>
+      <div class="feature">
+        <h3>Passion</h3>
+        <p>VLSI design, semiconductor circuits, digital systems</p>
+      </div>
+      <div class="feature">
+        <h3>Hobby</h3>
+        <p>Exploring myself — learning new skills and experimenting</p>
+      </div>
+    </section>
+
+    <section class="container quick-projects">
+      <h2>Selected Projects (placeholder)</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h4>RTL Design of 8-bit ALU</h4>
+          <p>VHDL implementation and simulation of an 8-bit arithmetic logic unit.</p>
+        </article>
+        <article class="project-card">
+          <h4>FPGA-based Signal Processing</h4>
+          <p>Real-time DSP filter implemented on an FPGA development board.</p>
+        </article>
+        <article class="project-card">
+          <h4>CMOS Inverter Analysis</h4>
+          <p>SPICE simulations and layout experiments on CMOS inverter characteristics.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Ankur Sharma • <a href="mailto:golababa1227@gmail.com">golababa1227@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
+
+<!-- FILE: about.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Ankur Sharma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">Ankur Sharma</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="resume-btn" href="assets/resume.pdf" download>Download Resume</a>
+    </nav>
+  </header>
+
+  <main class="container about-page">
+    <h1>About Me</h1>
+    <p class="lead">I’m Ankur Sharma, a passionate Electronics Engineering student at REC Mirzapur with a keen interest in VLSI design and semiconductor technology. I enjoy exploring myself, learning new things, and growing through challenges.</p>
+
+    <section class="about-grid">
+      <div class="about-card">
+        <h3>Education</h3>
+        <p>B.Tech in Electronics Engineering — REC Mirzapur</p>
+      </div>
+      <div class="about-card">
+        <h3>Interests</h3>
+        <p>VLSI design, digital design, SPICE simulations, FPGA development</p>
+      </div>
+      <div class="about-card">
+        <h3>Skills (placeholders)</h3>
+        <ul>
+          <li>Digital Design (VHDL/Verilog)</li>
+          <li>FPGA implementation</li>
+          <li>Analog circuit basics & SPICE</li>
+          <li>Basic Python scripting</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Goals</h2>
+      <p>Short-term: Build solid RTL design projects and complete hands-on FPGA projects. Long-term: Work in VLSI design and contribute to semiconductor research and product development.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year2"></span> Ankur Sharma</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- FILE: projects.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Ankur Sharma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">Ankur Sharma</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="resume-btn" href="assets/resume.pdf" download>Download Resume</a>
+    </nav>
+  </header>
+
+  <main class="container projects-page">
+    <h1>Projects</h1>
+    <p class="lead">Below are sample project placeholders. Replace these with your own project write-ups, images, and links to GitHub or reports.</p>
+
+    <div class="project-list">
+      <article class="project-item">
+        <h3>RTL Design of 8-bit ALU</h3>
+        <p>Implemented an 8-bit ALU in VHDL. Supported arithmetic and logical operations with testbenches and waveform verification.</p>
+        <p><strong>Technologies:</strong> VHDL, ModelSim</p>
+        <a class="btn small" href="#">View on GitHub (placeholder)</a>
+      </article>
+
+      <article class="project-item">
+        <h3>FPGA-based DSP Filter</h3>
+        <p>Designed a finite impulse response (FIR) filter and mapped it to an FPGA for real-time audio processing.</p>
+        <p><strong>Technologies:</strong> Verilog, Vivado, FPGA</p>
+        <a class="btn small" href="#">View on GitHub (placeholder)</a>
+      </article>
+
+      <article class="project-item">
+        <h3>CMOS Inverter SPICE Analysis</h3>
+        <p>SPICE simulations of CMOS inverter, extraction of VTC and power characteristics.</p>
+        <p><strong>Technologies:</strong> SPICE</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year3"></span> Ankur Sharma</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- FILE: contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Ankur Sharma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">Ankur Sharma</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a class="resume-btn" href="assets/resume.pdf" download>Download Resume</a>
+    </nav>
+  </header>
+
+  <main class="container contact-page">
+    <h1>Contact Me</h1>
+    <p class="lead">I’d love to hear from you. You can reach me by email or via Twitter.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:golababa1227@gmail.com">golababa1227@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Twitter</h3>
+        <p><a href="https://x.com/probhai_oo7" target="_blank" rel="noopener">@probhai_oo7</a></p>
+      </div>
+    </div>
+
+    <h2>Send a quick message</h2>
+    <form id="contact-form" class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn">Send</button>
+      <p id="form-msg" class="form-msg"></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year4"></span> Ankur Sharma</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+<!-- FILE: css/style.css -->
+:root{
+  --bg:#05060a;
+  --panel:#0b0f14;
+  --muted:#9aa4b2;
+  --neon1:#00d4ff;
+  --neon2:#6a00ff;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #03040a 0%, #061221 100%);
+  color:#dbe7ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.site-header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:700;color:var(--neon1);text-decoration:none}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.nav-links a{color:var(--muted);text-decoration:none;padding:6px 8px;border-radius:6px}
+.nav-links a:hover, .nav-links a.active{color:#fff;background:linear-gradient(90deg, rgba(0,212,255,0.06), rgba(106,0,255,0.06))}
+.resume-btn{background:linear-gradient(90deg,var(--neon1),var(--neon2));padding:8px 12px;border-radius:8px;color:#041023;text-decoration:none;font-weight:600}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:48px 0}
+.hero-left h1{font-size:36px;margin:0}
+.neon{color:var(--neon1);text-shadow:0 0 8px rgba(0,212,255,0.18),0 0 28px rgba(106,0,255,0.08);}
+.tagline{color:var(--muted);margin-top:8px}
+.hero-left p{line-height:1.6;color:#cfdff7}
+.cta-row{margin-top:18px;display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--neon1),var(--neon2));color:#041023;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--neon1)}
+.social-row{margin-top:12px}
+.social-row a{color:var(--muted);text-decoration:none}
+.avatar{display:flex;align-items:center;justify-content:center}
+.features{display:flex;gap:16px;margin:36px 0}
+.feature{background:var(--panel);padding:18px;border-radius:12px;flex:1}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:10px}
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:16px 0;margin-top:40px}
+.about-page .lead, .projects-page .lead{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+.about-card{background:var(--panel);padding:16px;border-radius:10px}
+.project-list{display:grid;gap:14px}
+.project-item{background:var(--panel);padding:16px;border-radius:10px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.contact-card{background:var(--panel);padding:16px;border-radius:10px}
+.contact-form{margin-top:18px;display:flex;flex-direction:column;gap:10px;max-width:700px}
+.contact-form input, .contact-form textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.form-msg{color:var(--neon1);font-weight:600}
+.btn.small{padding:8px 12px}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .nav-links{display:none}
+}
+/* subtle animated gradient for headings using CSS only */
+.neon{background:linear-gradient(90deg,var(--neon1),var(--neon2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* accessibility helpers */
+a{outline-color:rgba(0,212,255,0.2)}
+
+/* simple focus-visible */
+:focus{outline:2px solid rgba(255,255,255,0.02);outline-offset:2px}
+
+/* small utility */
+.lead{color:var(--muted)}
+
+/* make footer text small */
+.site-footer p{color:var(--muted);margin:0}
+
+/* container padding tweaks for small screens */
+@media(max-width:520px){.container{padding:16px}.hero-left h1{font-size:28px}}
+
+<!-- end of style.css -->
+
+<!-- FILE: js/main.js -->
+// small JS for year and contact form handling (lightweight)
+document.addEventListener('DOMContentLoaded', function(){
+  const y = new Date().getFullYear();
+  ['year','year2','year3','year4'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.textContent = y;
+  });
+
+  const form = document.getElementById('contact-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+      if(!name || !email || !message){
+        showMsg('Please fill all fields');
+        return;
+      }
+      // fallback: open mail client with prefilled content
+      const subject = encodeURIComponent('Website Contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+      window.location.href = `mailto:golababa1227@gmail.com?subject=${subject}&body=${body}`;
+      showMsg('Opening your mail client...');
+    });
+  }
+
+  function showMsg(text){
+    const el = document.getElementById('form-msg');
+    if(el){ el.textContent = text; setTimeout(()=>el.textContent='','4000'); }
+  }
+});
+
+<!-- FILE: assets/README.txt -->
+Put your resume PDF here and name it: resume.pdf
+
