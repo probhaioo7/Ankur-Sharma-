@@ -1,121 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ankur Sharma — Electronics & VLSI</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #ff6600;
-    }
-    header h1 {
-      margin: 0;
-      color: #ff6600;
-    }
-    header p {
-      margin: 5px 0 0 0;
-      color: #fff;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      color: #ff6600;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #ff6600;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #ff6600;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    a.button:hover {
-      background-color: #e65c00;
-    }
-    .projects, .contact-info {
-      margin-top: 20px;
-    }
-    .project-item {
-      background-color: #111;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-left: 4px solid #ff6600;
-      border-radius: 4px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 2px solid #ff6600;
-      margin-top: 40px;
-    }
-    footer a {
-      color: #ff6600;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ankur Sharma — RTL Design Engineer</title>
+<meta name="description" content="Portfolio and resume of Ankur Sharma, RTL Design Engineer in training.">
+
+<!--
+  =====================================================================
+  HOW TO EDIT THIS SITE
+  =====================================================================
+  Every placeholder is wrapped like this:  <!-- EDIT: ... -->
+  Search this file for "EDIT:" to find every spot you need to fill in.
+
+  Sections, top to bottom:
+    1. NAV        – your name in the top bar (auto-matches hero)
+    2. HERO       – name, role, one-line tagline
+    3. ABOUT      – short paragraph about you
+    4. SKILLS     – three groups of skill "pins"
+    5. PROJECTS   – project cards (title, description, tags, link)
+    6. EDUCATION  – degree entry
+    7. CONTACT    – email, LinkedIn, GitHub
+
+  To publish on GitHub Pages:
+    1. Create a repo (e.g. "your-username.github.io" for a root site,
+       or any name for a project site).
+    2. Put this file in the repo as "index.html".
+    3. Go to Settings → Pages → set branch to "main" and folder to "/".
+    4. Your site goes live at the URL GitHub shows you there.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #0a0f1c;
+    --panel: #10182a;
+    --panel-2: #131d33;
+    --line: #232f4a;
+    --accent: #ffb020;
+    --accent-dim: #8a5f18;
+    --accent-2: #5eead4;
+    --text: #e7ecf3;
+    --muted: #8492a6;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --disp: 'Space Grotesk', system-ui, sans-serif;
+    --maxw: 1080px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+  a{ color: inherit; }
+
+  ::selection{ background: var(--accent); color: #100b00; }
+
+  :focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10,15,28,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: var(--maxw); margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-mark{
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .nav-links{ display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a{
+    text-decoration: none; color: var(--muted); font-family: var(--mono);
+    font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color .15s ease;
+  }
+  .nav-links a:hover{ color: var(--text); }
+  .nav-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding: 96px 0 64px; }
+  .eyebrow{
+    font-family: var(--mono); color: var(--accent); font-size: 13px;
+    letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 18px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before{ content: ''; width: 8px; height: 8px; background: var(--accent-2); border-radius: 50%; box-shadow: 0 0 8px var(--accent-2); }
+
+  h1.name{
+    font-family: var(--disp); font-weight: 700; font-size: clamp(40px, 7vw, 76px);
+    line-height: 1.02; margin: 0 0 14px; letter-spacing: -0.01em;
+  }
+  .tagline{
+    font-size: clamp(16px, 2vw, 19px); color: var(--muted); max-width: 620px; margin: 0 0 34px;
+  }
+  .hero-cta{ display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn{
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em;
+    padding: 12px 20px; border-radius: 2px; text-decoration: none;
+    border: 1px solid var(--line); transition: all .15s ease;
+  }
+  .btn-primary{ background: var(--accent); color: #140d00; border-color: var(--accent); font-weight: 600; }
+  .btn-primary:hover{ background: #ffc457; }
+  .btn-ghost{ color: var(--text); }
+  .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
+
+  /* ---------- WAVEFORM SIGNATURE ---------- */
+  .scope{ margin-top: 56px; border: 1px solid var(--line); background: var(--panel); border-radius: 4px; overflow: hidden; }
+  .scope-head{
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; border-bottom: 1px solid var(--line);
+    font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.08em;
+  }
+  .scope-dots{ display: flex; gap: 6px; }
+  .scope-dots span{ width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .scope svg{ display: block; width: 100%; height: auto; }
+  .trace{
+    fill: none; stroke: var(--accent-2); stroke-width: 2;
+    stroke-dasharray: 900; stroke-dashoffset: 900;
+    animation: draw 2.6s ease-out forwards;
+  }
+  .trace.delay{ animation-delay: .3s; stroke: var(--accent); }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+  .scope-label{ font-family: var(--mono); font-size: 10px; fill: var(--muted); letter-spacing: 0.05em; }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding: 76px 0; border-top: 1px solid var(--line); }
+  .section-head{ display: flex; align-items: baseline; gap: 14px; margin-bottom: 40px; }
+  .section-num{ font-family: var(--mono); color: var(--accent); font-size: 13px; }
+  h2{ font-family: var(--disp); font-size: clamp(24px, 3vw, 32px); margin: 0; font-weight: 600; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+  .about-text p{ color: var(--text); font-size: 16px; max-width: 60ch; }
+  .about-text p + p{ margin-top: 14px; }
+  .facts{ font-family: var(--mono); font-size: 13px; border-left: 2px solid var(--line); padding-left: 18px; display: flex; flex-direction: column; gap: 12px; }
+  .facts dt{ color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: 10.5px; }
+  .facts dd{ margin: 2px 0 0; color: var(--text); }
+
+  /* ---------- SKILLS ---------- */
+  .skill-groups{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .skill-group{ background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 22px; }
+  .skill-group h3{
+    font-family: var(--mono); font-size: 12px; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 16px;
+    padding-bottom: 12px; border-bottom: 1px dashed var(--line);
+  }
+  .pins{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .pin{
+    font-family: var(--mono); font-size: 12.5px; color: var(--text);
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 3px;
+    padding: 6px 10px; display: flex; align-items: center; gap: 6px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .pin:hover{ border-color: var(--accent-2); transform: translateY(-1px); }
+  .pin i{ width: 6px; height: 6px; background: var(--accent-2); border-radius: 50%; flex: none; }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .card{
+    background: var(--panel); border: 1px solid var(--line); border-radius: 4px;
+    padding: 26px; display: flex; flex-direction: column; gap: 12px;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .card-top{ display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+  .card h3{ font-family: var(--disp); font-size: 19px; margin: 0; font-weight: 600; }
+  .card-link{ font-family: var(--mono); font-size: 11px; color: var(--accent-2); text-decoration: none; white-space: nowrap; }
+  .card-link:hover{ text-decoration: underline; }
+  .card p{ color: var(--muted); font-size: 14.5px; margin: 0; }
+  .tags{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .tag{ font-family: var(--mono); font-size: 10.5px; color: var(--accent); background: rgba(255,176,32,0.08); border: 1px solid var(--accent-dim); border-radius: 2px; padding: 3px 8px; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-row{
+    display: flex; justify-content: space-between; gap: 20px; align-items: flex-start;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 22px 26px;
+  }
+  .edu-row h3{ font-family: var(--disp); font-size: 18px; margin: 0 0 4px; font-weight: 600; }
+  .edu-row .org{ color: var(--muted); font-size: 14px; }
+  .edu-date{ font-family: var(--mono); font-size: 12px; color: var(--accent); white-space: nowrap; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-inner{ text-align: center; padding-top: 8px; }
+  .contact-inner h2{ margin-bottom: 10px; }
+  .contact-inner p{ color: var(--muted); max-width: 46ch; margin: 0 auto 30px; }
+  .contact-links{ display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-link{
+    font-family: var(--mono); font-size: 13px; padding: 12px 22px; border: 1px solid var(--line);
+    border-radius: 2px; text-decoration: none; color: var(--text); transition: all .15s ease;
+  }
+  .contact-link:hover{ border-color: var(--accent); color: var(--accent); }
+
+  footer{ border-top: 1px solid var(--line); padding: 26px 0; text-align: center; }
+  footer p{ font-family: var(--mono); font-size: 11px; color: var(--muted); margin: 0; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 760px){
+    .nav-links{ gap: 14px; }
+    .nav-links a{ font-size: 11px; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .skill-groups{ grid-template-columns: 1fr; }
+    .projects{ grid-template-columns: 1fr; }
+    .edu-row{ flex-direction: column; }
+  }
+  @media (max-width: 520px){
+    .nav-links{ display: none; }
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Ankur Sharma</h1>
-    <p>Electronics Engineer | <a href="https://en.wikipedia.org/wiki/Very-large-scale_integration"> VLSI</a> Enthusiast</p> | <a href="https://sarecmzp.ac.in/"> B.Tech at REC Mirzapur</a> |</p>
-  </header>
+<header class="nav">
+  <div class="nav-inner">
+    <!-- EDIT: your name, shown small in the top bar -->
+    <span class="nav-mark">ANKUR_SHARMA.hdl</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I am Ankur Sharma, a passionate Electronics Engineering student at REC Mirzapur. I love VLSI design and exploring new technologies. My hobby is exploring myself and learning new things every day.</p>
+<main class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" style="border-top:none; padding-top:96px;">
+    <p class="eyebrow">// signal locked</p>
+    <!-- EDIT: your full name -->
+    <h1 class="name">Ankur Sharma</h1>
+    <!-- EDIT: one line about your goal / focus -->
+    <p class="tagline">B.Tech Electronic Engineering student from Prayagraj, building toward a career as an RTL Design Engineer — turning specs into synthesizable, verified hardware.</p>
+    <div class="hero-cta">
+      <!-- EDIT: link this to your resume PDF once you add one to the repo -->
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="#projects">View projects</a>
+    </div>
+
+    <div class="scope">
+      <div class="scope-head">
+        <span>clk_domain.wave — 100MHz</span>
+        <div class="scope-dots"><span></span><span></span><span></span></div>
+      </div>
+      <svg viewBox="0 0 800 140" preserveAspectRatio="none" role="img" aria-label="Decorative clock and data signal waveform">
+        <path class="trace" d="M0,40 L40,40 L40,20 L100,20 L100,40 L160,40 L160,20 L220,20 L220,40 L280,40 L280,20 L340,20 L340,40 L400,40 L400,20 L460,20 L460,40 L520,40 L520,20 L580,20 L580,40 L640,40 L640,20 L700,20 L700,40 L760,40 L760,20 L800,20"/>
+        <path class="trace delay" d="M0,100 L60,100 L60,80 L140,80 L140,100 L200,100 L200,60 L300,60 L300,100 L380,100 L380,80 L460,80 L460,100 L560,100 L560,60 L640,60 L640,100 L800,100"/>
+        <text x="10" y="18" class="scope-label">CLK</text>
+        <text x="10" y="78" class="scope-label">DATA</text>
+      </svg>
+    </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <!-- EDIT: 2-3 sentences about yourself — background, what you're learning, what you're aiming for -->
+        <p>PLACEHOLDER: Write a short paragraph here about who you are, what draws you to digital design, and what you're currently learning or working on.</p>
+        <p>PLACEHOLDER: A second paragraph — mention any coursework, labs, or self-driven learning relevant to RTL / hardware design.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Prayagraj, India</dd></div>
+        <div><dt>Studying</dt><dd>B.Tech, Electronic Engineering</dd></div>
+        <div><dt>Aiming for</dt><dd>RTL Design Engineer</dd></div>
+        <!-- EDIT: add or remove facts as you like -->
+        <div><dt>Open to</dt><dd>PLACEHOLDER: internships / entry-level roles</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="section-head"><span class="section-num">02</span><h2>Skills</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>HDL &amp; Digital Design</h3>
+        <div class="pins">
+          <span class="pin"><i></i>Verilog</span>
+          <span class="pin"><i></i>VHDL</span>
+          <span class="pin"><i></i>Digital Logic Design</span>
+          <span class="pin"><i></i>RTL Design</span>
+          <!-- EDIT: add more, e.g. FSMs, Pipelining, Timing Analysis -->
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Tools &amp; Flow</h3>
+        <div class="pins">
+          <!-- EDIT: fill in the tools you actually use -->
+          <span class="pin"><i></i>PLACEHOLDER: ModelSim</span>
+          <span class="pin"><i></i>PLACEHOLDER: Xilinx Vivado</span>
+          <span class="pin"><i></i>PLACEHOLDER: Quartus</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Foundations</h3>
+        <div class="pins">
+          <!-- EDIT: languages, concepts, coursework -->
+          <span class="pin"><i></i>PLACEHOLDER: C / C++</span>
+          <span class="pin"><i></i>PLACEHOLDER: Computer Architecture</span>
+          <span class="pin"><i></i>PLACEHOLDER: Signals &amp; Systems</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="section-head"><span class="section-num">03</span><h2>Projects</h2></div>
     <div class="projects">
-      <div class="project-item">
-        <h3>RTL Design of 8-bit ALU</h3>
-        <p>VHDL implementation and simulation of an 8-bit arithmetic logic unit.</p>
+      <!-- EDIT: duplicate this .card block for each project -->
+      <article class="card">
+        <div class="card-top">
+          <h3>PLACEHOLDER: Project Title</h3>
+          <a class="card-link" href="#">View →</a>
+        </div>
+        <p>PLACEHOLDER: One or two sentences describing what the project does and what problem it solves.</p>
+        <div class="tags">
+          <span class="tag">Verilog</span>
+          <span class="tag">Testbench</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <h3>PLACEHOLDER: Project Title</h3>
+          <a class="card-link" href="#">View →</a>
+        </div>
+        <p>PLACEHOLDER: One or two sentences describing what the project does and what problem it solves.</p>
+        <div class="tags">
+          <span class="tag">VHDL</span>
+          <span class="tag">FPGA</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <h3>PLACEHOLDER: Project Title</h3>
+          <a class="card-link" href="#">View →</a>
+        </div>
+        <p>PLACEHOLDER: One or two sentences describing what the project does and what problem it solves.</p>
+        <div class="tags">
+          <span class="tag">RTL</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <h3>PLACEHOLDER: Project Title</h3>
+          <a class="card-link" href="#">View →</a>
+        </div>
+        <p>PLACEHOLDER: One or two sentences describing what the project does and what problem it solves.</p>
+        <div class="tags">
+          <span class="tag">Simulation</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education">
+    <div class="section-head"><span class="section-num">04</span><h2>Education</h2></div>
+    <div class="edu-row">
+      <div>
+        <h3>B.Tech, Electronic Engineering</h3>
+        <!-- EDIT: your institution name -->
+        <p class="org">PLACEHOLDER: College / University Name, Prayagraj</p>
       </div>
-      <div class="project-item">
-        <h3>FPGA-based Signal Processing</h3>
-        <p>Real-time DSP filter implemented on an FPGA development board.</p>
-      </div>
-      <div class="project-item">
-        <h3>CMOS Inverter Analysis</h3>
-        <p>SPICE simulations and layout experiments on CMOS inverter characteristics.</p>
+      <!-- EDIT: your years, e.g. 2023 – 2027 -->
+      <span class="edu-date">PLACEHOLDER: 20XX – 20XX</span>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-head" style="justify-content:center;"><span class="section-num">05</span><h2>Contact</h2></div>
+      <p>Open to internships and entry-level RTL / digital design roles. Reach out below.</p>
+      <div class="contact-links">
+        <!-- EDIT: replace each href with your real details -->
+        <a class="contact-link" href="mailto:your.email@example.com">Email</a>
+        <a class="contact-link" href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="contact-link" href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>Email: <a href="mailto:golababa1227@gmail.com">golababa1227@gmail.com</a></p>
-      <p>Twitter: <a href="https://x.com/probhai_oo7" target="_blank">@probhai_oo7</a></p>
-      <p>linkedin: <a href="https://www.linkedin.com/in/ankur-sharma-82a76331b/" target="_blank">@linked</a></p>
-      <a class="button" href="assets/resume.pdf" download>Download Resume</a>
-    </div>
-  </section>
+</main>
 
-  <footer>
-    &copy; 2025 Ankur Sharma
-  </footer>
+<footer>
+  <p>&copy; <span id="year"></span> Ankur Sharma — built with HTML &amp; CSS</p>
+</footer>
 
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
-</html>
-
+        </html>
